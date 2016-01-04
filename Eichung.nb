@@ -1,0 +1,168 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[      5123,        167]
+NotebookOptionsPosition[      4267,        131]
+NotebookOutlinePosition[      4619,        147]
+CellTagsIndexPosition[      4576,        144]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"mitLaser", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{
+    "\"\</Users/raminjavadi/Desktop/FP.MOT/eichbildlaser.bmp\>\"", ",", 
+     "\"\<RawData\>\""}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ohneLaser", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{
+    "\"\</Users/raminjavadi/Desktop/FP.MOT/eichbildhintergrund.bmp\>\"", ",", 
+     "\"\<RawData\>\""}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.658581500092481*^9, 3.658581501998731*^9}, {
+   3.6585815420456057`*^9, 3.658581610717481*^9}, {3.658581655686231*^9, 
+   3.658581669686231*^9}, {3.6585818051081057`*^9, 3.6585818340143557`*^9}, 
+   3.658732208694551*^9, 3.658732240809843*^9, {3.658734207899736*^9, 
+   3.658734228564577*^9}, {3.658734349841125*^9, 3.6587343698165493`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"pixel", "=", 
+   RowBox[{
+    RowBox[{"Total", "[", 
+     RowBox[{"Flatten", "[", "mitLaser", "]"}], "]"}], "-", 
+    RowBox[{"Total", "[", 
+     RowBox[{"Flatten", "[", "ohneLaser", "]"}], "]"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.658581898686231*^9, 3.658581918904981*^9}, {
+  3.658581967904981*^9, 3.6585819948581057`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Lambda]", "=", 
+   RowBox[{"780.246", " ", 
+    RowBox[{"10", "^", 
+     RowBox[{"-", "9"}]}]}]}], ";", 
+  RowBox[{"h", "=", 
+   RowBox[{"6.62606957", " ", 
+    RowBox[{"10", "^", 
+     RowBox[{"-", "34"}]}]}]}], ";", 
+  RowBox[{"c", "=", "299792458"}], ";", 
+  RowBox[{"e", "=", 
+   RowBox[{"h", " ", 
+    RowBox[{"c", "/", "\[Lambda]"}]}]}], ";", 
+  RowBox[{"od", "=", "3"}], ";", 
+  RowBox[{"p", "=", 
+   RowBox[{".26", " ", "5.4", " ", 
+    RowBox[{"10", "^", 
+     RowBox[{"-", "3"}]}]}]}], ";", 
+  RowBox[{"t", "=", 
+   RowBox[{"19.932", " ", 
+    RowBox[{"10", "^", 
+     RowBox[{"-", "3"}]}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.658582180436231*^9, 3.6585822517643557`*^9}, {
+  3.6585822865456057`*^9, 3.658582408873731*^9}, {3.658582481342481*^9, 
+  3.6585824828581057`*^9}, {3.658582667654981*^9, 3.6585826744518557`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"photonen", "=", 
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"n", " ", "e"}], "\[Equal]", 
+      RowBox[{"p", " ", 
+       RowBox[{"Exp", "[", 
+        RowBox[{"-", "od"}], "]"}], " ", "t"}]}], ",", "n"}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.658582721123731*^9, 3.658582826342481*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"photonenProPixel", "=", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"n", "/.", 
+     RowBox[{"photonen", "[", 
+      RowBox[{"[", "1", "]"}], "]"}]}], ")"}], "/", "pixel"}]}]], "Input",
+ CellChangeTimes->{{3.6585828363268557`*^9, 3.6585828564518557`*^9}, {
+  3.6585828994206057`*^9, 3.658582908279981*^9}}],
+
+Cell[BoxData["242423.25467813306`"], "Output",
+ CellChangeTimes->{{3.658582852217481*^9, 3.6585828567956057`*^9}, 
+   3.6585829092331057`*^9, 3.65873219076167*^9, 3.658734246596902*^9, 
+   3.658734330571207*^9, 3.658734380362393*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xPixelMilli", "=", "256"}], ";", 
+  RowBox[{"yPixelMilli", "=", "258"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Mean", "[", 
+   RowBox[{"{", 
+    RowBox[{"xPixelMilli", ",", "yPixelMilli"}], "}"}], "]"}], "//", 
+  "N"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.658736552606757*^9, 3.658736696994192*^9}}],
+
+Cell[BoxData["257.`"], "Output",
+ CellChangeTimes->{3.6587372150344887`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[Mu]mPrpPixel", "=", 
+  RowBox[{
+   RowBox[{"10", "^", "4"}], "/", "257.`"}]}]], "Input",
+ CellChangeTimes->{{3.658736719153224*^9, 3.6587367552189703`*^9}, {
+  3.658737180282276*^9, 3.658737188671123*^9}}],
+
+Cell[BoxData["38.91050583657588`"], "Output",
+ CellChangeTimes->{3.6587371913520308`*^9}]
+}, Open  ]]
+},
+WindowSize->{715, 527},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.2 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 29, \
+2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 806, 17, 127, "Input"],
+Cell[1209, 32, 369, 9, 42, "Input"],
+Cell[1581, 43, 876, 25, 63, "Input"],
+Cell[2460, 70, 358, 11, 42, "Input"],
+Cell[CellGroupData[{
+Cell[2843, 85, 327, 8, 28, "Input"],
+Cell[3173, 95, 233, 3, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3443, 103, 369, 9, 78, "Input"],
+Cell[3815, 114, 76, 1, 62, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3928, 120, 231, 5, 28, InheritFromParent],
+Cell[4162, 127, 89, 1, 28, "Output"]
+}, Open  ]]
+}
+]
+*)
+
