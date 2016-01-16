@@ -34,8 +34,63 @@
   \subsection{Übergänge von ${}^{87}$Rb}
 \section{Bestandteile der MOT}
   \subsection{Die Laser}
+    In dem Versuchsaufbau werden zwei Halbleiterlaser (Kühl- und Rückpumplaser)
+    verwendet. Der Kühllaser wird mit ca. \SI{85}{\mA}, der Rückpumper mit ca.
+    \SI{160}{\mA} betrieben. Durch Anlegen eines Stromes in Durchlassrichtung
+    einer p-n-Diode entsteht eine dünne Schicht, in der es eine Besetzungsinversion
+    mit Löchern im Valenz- und Elektronen im Leitungsband gibt. Als Resonator
+    dienen die Stirnflächen der Diode. Durch Änderung des Stromes kann man die
+    emittierte Wellenlänge ändern, allerdings erhöht sich gleichzeitig die
+    Laserleistung. Ein Problem der Laser ist, dass sich durch leichte
+    Temperaturänderungen die optische Weglänge des Lasers ändert und es somit zu
+    Modensprüngen kommt. Um diese zu umgehen (und zum feineren Einstellen der
+    Wellenlänge) wird ein Gitter als externe Cavity verwendet. Die erste
+    Beugungsordnung wird dabei zurückreflektiert. Der Winkel, unter dem der Strahl
+    von Gitter reflektiert wird ist von der Wellenlänge abhängig, daher kann man
+    durch drehen des Gitters eine Änderung der Wellenlänge erreichen. Um das Gitter
+    zu drehen ist es auf einem Piezo-Kristall befestigt. Durch Änderung des Stromes
+    am Piezo-Element, ändert sich dessen Temperatur und damit dessen Ausdehnung, das
+    Gitter wird also bewegt. Die Reflexion in die nullte Ordnung wird als Laserlicht
+    verwendet. Um Rückreflexe in die Diode zu verhindern steht hinter den Lasern
+    jeweils ein Isolator.
+  \subsection{Laserlocken}
+    Um die Laser zu koppeln wird ein kleiner Teil des Lichts in den
+    Spektroskopiepfad ausgekoppelt. Dort befindet sich ein Aufbau zur
+    Sättigungsspektroskopie. Dabei wird der Strahl durch eine Glasscheibe geschickt
+    (es entstehen zwei Reflexe, einer an der Vorder- einer an der Rückseite der
+    Scheibe) und über einen Spiegel in eine Rubidiumzelle geleitet (Pumpstrahl). Die
+    beiden Reflexe von der Glasplatte werden ebenfalls in die Rubidiumzelle geschickt,
+    allerdings von der anderen Seite (dadurch sind sie jeweils in die andere Richtung
+    dopplerverschoben, wie der Pumpstrahl). Dabei passiert der stärkere Reflex
+    (Abfragestrahl) in der Zelle einen Bereich, den auch der Pumpstrahl durchläuft.
+    Beide brennen dadurch Löcher in das normale Dopplerprofil, die im gleichen
+    Abstand links und rechts vom Maximum sind. Stellt man die Wellenlänge richtig ein,
+    können sich beide Löcher im Profil überlagern (die Rubidiumatome können also von
+    beiden Strahlen angeregt werden). Dies kann passieren, wenn man genau auf
+    Resonanz mit einem Übergang ist (da beide Strahlen um den gleichen Betrag
+    dopplerverschoben sind ist Absorption von Licht aus beiden Strahlen gleich
+    wahrscheinlich $\rightarrow$ Lamb-Dip) oder wenn die Wellenlänge genau zwischen
+    zwei Übergängen liegt (beide Strahlen regen jeweils unterschiedliche Übergänge an
+    $\rightarrow$ Cross-Over-Resonanz). Da auf dem Oszilloskop die Absorption des
+    Laserlichts angezeigt wird, erscheinen diese Dips als kleine Maxima im
+    Dopplerprofil. Der schwächere Reflex von der Glasplatte durchläuft die
+    Rubidiumzelle an einer anderen Stelle und misst somit zum Vergleich das reine
+    Dopplerprofil.
+    
+    Um die Laser zu locken wird der Strom am Piezoelement so eingestellt, dass man
+    genau den gewünschten Lamb-Dip erhält. Dabei wird auf dem Oszilloskop das
+    Signal vom Abfragestrahl (mit Dopplerprofil) angezeigt, zum Locken wird die
+    Differenz von Abfragestrahl und Dopplerprofil verwendet. Leichte Änderungen der
+    Wellenlänge (z.B. durch wackeln der Cavity oder Temperaturänderungen) sorgen
+    dafür, dass das Signal nicht mehr auf einem Maximum ist. Dann wird der Strom
+    automatisch auf den richtigen Wert geregelt um wieder das Maximum zu erreichen.
+    Da allerdings nicht klar ist, auf welcher Seite vom Maximum man sich befindet
+    wird das Signal zunächst abgeleitet. Die Ableitung des Signals erfolgt durch
+    Modulierung des Stromes mit einer Sinuskurve. Dies erlaubt Messungen auf beiden
+    Seiten leicht neben dem betrachteten Punkt und somit eine Abschätzung der Steigung
+    also eine Ableitung. Das Locken erfolgt dann auf einem Nulldurchgang der Ableitung.
   \subsection{Der AOM}
-  \subsection{Laserkopplung}
+    
   \subsection{Der TA}
   \subsection{Die Vakuumkammer}
   \subsection{Die Kamera}
