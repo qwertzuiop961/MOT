@@ -3,7 +3,7 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[         0,          0]
-NotebookDataLength[      5123,        167]
+NotebookDataLength[      5113,        167]
 NotebookOptionsPosition[      4267,        131]
 NotebookOutlinePosition[      4619,        147]
 CellTagsIndexPosition[      4576,        144]
@@ -156,10 +156,10 @@ Cell[3173, 95, 233, 3, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[3443, 103, 369, 9, 78, "Input"],
-Cell[3815, 114, 76, 1, 62, "Output"]
+Cell[3815, 114, 76, 1, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3928, 120, 231, 5, 28, InheritFromParent],
+Cell[3928, 120, 231, 5, 28, "Input"],
 Cell[4162, 127, 89, 1, 28, "Output"]
 }, Open  ]]
 }
