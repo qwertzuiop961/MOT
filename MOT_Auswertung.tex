@@ -44,6 +44,8 @@
     \vec F=\frac{\hbar \vec k}{2 \tau} \frac{I/I_0}{1+I/I_0+(\frac{ \delta _L-\vec k \vec v}{\Gamma /2})^2}
   \end{align*}
   Wie in Abbildung \ref{fvonv} zu sehen, wirkt bei Ausbreitungsrichtung des Atoms in $-z$-Richtung eine positive Kraft, bei Ausbreitung in $+z$-Richtung eine negative Kraft. In beiden Fällen werden die Atome auf eine Geschwindigkeit ${v\approx 0}$ abgebremst. Eine Geschwindigkeitsdämpfung ist im Bereich, wo die Kraft auf ein Atom sich linear ändert, möglich.
+  
+
    \begin{figure}[h!]
   \centering
   \includegraphics[width=0.5\textwidth]{fvonv.eps}
@@ -148,6 +150,47 @@ ${}^{87}$Rb ist ein Alkalimetall mit einem Elektron in der äußersten, der vier
   \subsection{Die Kamera}
 \section{Messungen}
   \subsection{Intensitätsmessungen im Strahlengang}
+  Am Anfang des Versuchs haben wir geprüft, ob alle optischen Komponenten richtig justiert sind. Dazu haben wir mit dem Leistungsmesskopf (Laserdiode) die Lichtleistungen an der geforderten Stellen (wie man in Abbildung \ref{leistung} genau sehen kann) gemessen. Dabei waren  Rückpumper bzw. Kühllaser mit $16.4 mA$ bzw. $86.1 mA$ im Betrieb.
+  
+    \begin{figure}[h!]
+  \centering
+  \includegraphics[width=1.\textwidth]{Strahlenleistungen.png}
+  \caption{gemessenen Leistungen im Lasersystem}
+  \label{leistung}
+  \end{figure}
+
+Und wir haben auch Strahlleistung vor dem Faser für zugehörige Ströme in TA gemessen, die Werte sind im  unteren Tabelle zu sehen. Es wird  erwartet, je Strom grösser in TA  desto mehr Leistung nach TA. Also wie man in Abbildung \ref{TA} sieht die Strahlleistung vor Faser steigt exponentiell für mehr Strom im TA.\\
+\begin{center}
+ \begin{tabular}{|c|c|}\hline
+ TA Strom in $mA$&Strahlleistung vor Faser in $mW$\\ \hline \hline
+400&2.3\\ \hline
+500&5.4\\ \hline
+600&12.5\\ \hline
+700&25.5\\ \hline
+800&49\\ \hline
+900& >>1\\ \hline
+\end{tabular}
+\end{center}
+
+    \begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\textwidth]{TA.png}
+  \caption{Zugehörige Diagramm}
+  \label{TA}
+  \end{figure}
   \subsection{Vermessung der Strahlbreite}
+  Zum Berechnung der Teilchenzahlen in der MOT ist nötig die Intensität des Laserstrahls zu kennen. Die Messgeräte, was im Versuch zur Verfügung standen, kann man aber nur die Leistung bestimmen.\\
+  Also es wird mit der''Knife-edge‘‘-Methode und Hilfe einer Linse den Strahlendurchmesser bestimmt. Dazu mästen wir für verschiedene Positionen der Mikrometerschraube in horizontaler und vertikaler Richtung, um waist $\omega_h$ und $\omega_v$ auszurechnen, folgt:\\
+  
+  
+  $\omega_h =2.828233463(x_{70\%}-x_{30\%})=2.828233463(6.43-4.21) \mu m=6.278678288  \mu m$ 
+  
+   $\omega_v =2.828233463(x_{70\%}-x_{30\%})=2.828233463(2.63-4.67) \mu m=5.769596265  \mu m$\\ \\
+   Damit können wir jetzt Strahlfläche $F$ ausrechnen:\\
+   
+   $F=\pi \omega_h \omega_v =113.806 \mu m^2$\\ \\
+   Und jetzt können wir Intensität $I$ ausrechnen, wobei die Leistung vom Strahl ohne Klinge ist $10^4 \mu W$:\\
+   
+   $I=\frac{P}{F}=\frac{10^{-2} W}{113.806 .10^{-12} m^2}=11380.6 W.m^{-2}$
   \subsection{Eichung der Kamera}
 \end{document}
