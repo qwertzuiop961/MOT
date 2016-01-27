@@ -1,22 +1,19 @@
 % !TEX encoding = UTF-8 Unicode
-\documentclass[12pt,a4paper]{article}
+\documentclass[12pt, a4paper]{article}
 \usepackage[ngerman]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{graphicx}
-\usepackage{enumerate}
-\usepackage[]{epstopdf}
+\usepackage{epstopdf}
 \usepackage[margin=1in]{geometry}
 \usepackage{titling}
 \usepackage{hyperref}
-\usepackage[german]{cleveref}
-\usepackage{amsmath,amsthm,verbatim,amssymb,amsfonts,amscd}
+\usepackage{amsmath}
 \usepackage{braket}
+\usepackage[expproduct=\cdot]{siunitx}
+\AtBeginDocument{\sisetup{math-rm=\mathrm, text-rm=\rmfamily}}
 \renewcommand{\familydefault}{\sfdefault}
-\usepackage[miktex]{gnuplottex}
-\usepackage[decimalsymbol=comma,separate-uncertainty=true,expproduct=\cdot,
-            uncertainty-separator=\pm]{siunitx}
 \setlength{\droptitle}{-2cm}
 \title{Auswertung zu IQ13:\\
        magneto-optische Falle\\
@@ -27,10 +24,9 @@
 \begin{document}
 \maketitle
 \tableofcontents
-\pagebreak
-\section{Theorie einer MOT}
+\newpage
+\section{Theorie einer magneto-optischen Falle}
   \subsection{Optische Melasse}
-  
   Laserkühlung von Atomen, das ist die Reduktion der atomaren Geschwindigkeitsverteilung, in diesem Fall durch Laserlicht. Dabei spielt der Strahlungsdruck wichtige Rolle, der zur Spontankraft führt. In einer Dimension betrachten wir die Wechselwirkung eines Lasers mit einem Zwei-Niveau-Atom mit der Übergangsfrequenz ${\omega_A}$. Wenn ein Laser gegenüber ${\omega_A}$ rotverstimmt ist und ein entgegenkommendes Atom eine Geschwindigkeit ${\vec v}$ hat, wird dieses Atom aufgrund des Dopplereffekts Photonen absorbieren. Danach werden von dem Atom Photonen spontan und somit ohne Vorzugsrichtung emittiert.
   
   Bei jedem Absorptions- und Emissionsprozeß findet ein Impulsübertrag statt. Wenn die Absorption aus einer Richtung passiert, ist die spontane Emission ungerichtet und auch die Impulsänderung durch sie im Mittel null. Deswegen wird ein Gesamtimpuls in Richtung des Laserstrahles auf das Atom übertragen.
@@ -55,37 +51,45 @@
   \newpage
   Unter einer optischen Melasse versteht man diese Geometrie in drei Dimensionen. Dies erreicht man, indem drei senkrecht zueinander stehende Laser, die jeweils in sich zurückreflektiert werden. Dadurch bewirken sie die Kühlung von Atomen.
  \\In einer optische Melasse ist die Temperatur ${T}$ gegeben durch das Gleichgewicht zwischen der Kühlrate durch Absorption und der Heizrate durch den stochastischen Charakter der Emissionen.
- \\Durch die optische Melasse werden die Atome im Impulsraum gefangen. Eine Einschränkung im Ortsraum alleine damit jedoch nicht möglich, deswegen ist eine optische Melasse ist keine echte Falle.
+ \\Durch die optische Melasse werden die Atome im Impulsraum gefangen. Eine Einschränkung im Ortsraum ist alleine damit jedoch nicht möglich, deswegen ist eine optische Melasse ist keine echte Falle.
  
- Durch ein zusätzliches Quadrupol-Magnetfeld kann eine Einschränkung im Ortsraum erreicht werden. Dies ist die Grundlage für die magneto-optische Falle.
+ Durch ein zusätzliches Quadrupol-Magnetfeld kann eine Einschränkung im Ortsraum erreicht werden. Dies ist die Grundlage für die magneto-optische Falle (engl. magneto-optical trap (MOT)).
 \subsection{Magnetfeld}
- Wir betrachten uns ein Zwei-Niveau-Atom in einer Dimension mit einem Grundzustand ${J=0}$ und einem angeregten Zustand ${J=1}$. 
-  \\Ein Quadrupol-Magnetfeld ${\vec B}$ wird erzeugt, um eine Ortsabhängigkeit der Resonanzfrequenz ${\omega_0}$ zu kriegen, was auch, wegen Zeeman-Effekts zu einer Aufspaltung des angeregten Zustands (${m_J=-1,0,1}$) in drei Zeeman-Unterzustände kommt.
+ Wir betrachten wieder ein Zwei-Niveau-Atom mit einem Grundzustand $\ket{J=0}$ und einem angeregten Zustand $\ket{J=1}$. 
+  \\Man erzeugt ein Quadrupol-Magnetfeld ${\vec B}$, um eine Ortsabhängigkeit der Resonanzfrequenz ${\omega_0}$ zu erhalten. Wegen Zeeman-Effekts wird der angeregte Zustand aufgespalten in drei Zustände ${m_J=-1,0,1}$.
   
-  Was wir hier uns angucken ist eine Anordnung Zwei zirkular polarisierte bzw. rotverstimmte Laser, die auch entgegengesetzt auf Atome eingestrahlt werden. Der rechte Laser ist linkszirkular polarisiert und der linke Laser rechtszirkular polarisiert.
-  \\Solange ein Atom sich nicht bewegt bzw. in Fallenzentrum befindet, wirkt keine Kraft. Bewegt sich das Atom z.B. nach links, so absorbiert mit hoher Wahrscheinlichkeit ein Photon aus dem ${\sigma^+}$-Strahl, weil es mit diesem rotverstimmten Laser in Resonanz kommt und das Atom wird Angeregt und bekommt den Zustand $\ket{J=1 , m_J=+1}$.  Analog passiert für das Atom, wenn es nach rechts aus dem Fallenzentrum bewegt. 
+  Es werden zwei zirkular polarisierte und bzgl. $\omega_0$ rotverstimmte Laser entgegengesetzt auf die Atome eingestrahlt. Der rechte Laser ist linkszirkular polarisiert und der linke Laser rechtszirkular polarisiert.
+  \\Solange ein Atom sich nicht bewegt, wirkt keine Kraft. Bewegt sich ein Atom z.B. nach links vom Zentrum der Falle weg, so absorbiert es mit hoher Wahrscheinlichkeit ein Photon aus dem ${\sigma^+}$-Strahl, weil es mit diesem rotverstimmten Laser in Resonanz kommt. Das Atom wird in den Zustand $\ket{J=1 , m_J=+1}$ angeregt und gekühlt. Analog wird ein Atom nach links zurückgetrieben, wenn es sich nach rechts aus dem Fallenzentrum bewegt. 
 
-  Es wird auf das Atom eine Kraft ausgeübt, wegen die Streuung der Photonen, die auch dazu führt , daß das Atom ins Fallenzentrum zurückkehrt. Die Absorption eines Photons aus dem ${\sigma^-}$ -Strahl passiert sehr Unwahrscheinlich.
+  Es wird also auf die Atome eine Kraft ausgeübt, die dazu führt, dass sie ins Fallenzentrum zurückkehren. Die Absorption eines Photons aus dem jeweils anderen Strahl ist sehr unwahrscheinlich, da die Atome nicht mit dem dort nach den Auswahlregeln erlaubten Übergang resonant sind. Das Magnetfeld ist in der Nähe des Zentrums linear. Dies bewirkt eine Aufspaltung des angeregten Zustands, wie in Abbildung \ref{zeemanmot}.
   \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.6\textwidth]{Mot_posforce.png}
+  \includegraphics[width=0.7\textwidth]{Mot_posforce.png}
   \caption{die Aufspaltung des angeregten Zustands durch den Zeeman-Effekt und die ortsabhängige Kraft (Quelle: \url{https://de.wikipedia.org/wiki/Magneto-optische_Falle})}
   \label{zeemanmot}
   \end{figure}\\
- Damit begrenzt man räumlich die Atome. Im dreidimensionalen Fall wird ein Quadrupol-Magnetfeld durch zwei gegensinnig durch- flossene Spulen erreicht. Das Magnetfeld verläuft in einer Umgebung des Fallenzentrums linear, so daß eine Aufspaltung des angeregten Zustands, wie in Abbildung \ref{zeemanmot}, erreicht wird.
+ Damit begrenzt man die Atome räumlich. Während man die optische Melasse mit einer Reibungskraft vergleichen kann, wirkt die durch diese Anordnung erzeugte Kraft wie eine Federkraft. In drei Dimensionen erzeugt man ein Quadrupol-Magnetfeld durch Anti-Helmholtz-Spulen.
   \subsection{Übergänge von ${}^{87}$Rb}
-  In dem Versuch war gut geeignetes Element, Rubidium. Zur Laserkühlung ist Rubidium aus verschiedenen Gründen gut geeignet. Erstens gibt es kostengünstige und kompakte Diodenlaser mit einer ähnlichen Frequenz wie der des Kühlübergangs von Rubidium, zweitens hat das Element einen hohen Dampfdruck von ${10^{-8}}$ Torr bei 300K. Deswegen muss man die Atome nicht stark erhitzen.
+  In dem Versuch werden Rubidium-Atome verwendet. Rubidium zur Laserkühlung gut geeignet, da es Diodenlaser mit einer ähnlichen Frequenz wie der des Kühlübergangs von Rubidium gibt und das Element einen hohen Dampfdruck bei Raumtemperatur hat. Andere Atome muss man vorm Kühlen erhitzen, damit der Dampfdruck hoch genug ist um eine genügende Anzahl von Atomen in der Kammer zu haben. Das ist bei Rubidium allerdings nicht der Fall.
   
-${}^{87}$Rb ist ein Alkalimetall mit einem Elektron in der äußersten, der vierten Schale. Im Grundzustand $5S_{1/2}$ besitzt das Atom einen Drehimpuls
-   $\ket{J = 1/2}$ und im ersten angeregten Zustand $5P_{3/2}$ einen Drehimpuls$\ket{J = 3/2}$ . Das Gesamtdrehimpuls  $I$ des Protons von ${}^{87}$Rb ist  $ 3/2$. Für den Grundzustand ergeben sich folglich $F = 1$ und $F = 2$, sowie $F'= 0,1,2,3$ für den ersten angeregten Zustand.
-   Unsere Kühlübergang ist der Übergang $\ket{F=2}\rightarrow\ket{F'=3}$. Aber es kann sein, dass eine Anregung von $\ket{F=2}\rightarrow\ket{F'=2}$ passiert und das Atom in Zustand $\ket{F=1}$ fällt, deswegen kann Kühllaser diese Atome nicht mehr abbremsen. Das Rückpumplaser hilft dabei, um diese Atome weiter in den Zustand $\ket{F'=2}$ anzuregen. Danach kann Elektron den Zustand $\ket{F=2}$ besitzen, dann können Atome weiter gekühlt werden.
-     \begin{figure}[h!]
+${}^{87}$Rb ist ein Alkalimetall, daher trägt nur das Elektron ($S=1/2$) in der äußersten Schale zum Drehimpuls $\vec{J}=\vec{L}+\vec{S}$ bei. Im Grundzustand $5S_{1/2}$ ($L=0$) besitzt das Atom also einen Drehimpuls $J = 1/2$. Der erste angeregten Zustand ist $5P_{3/2}$ ($L=1,\, J=3/2$). Der Kerndrehimpuls von ${}^{87}$Rb ist $I=3/2$. Der Gesamtdrehimpuls $\vec{F}=\vec{I}+\vec{J}$ kann also im Grundzustand die Werte $F = 1$ und $F = 2$ annehmen. Im ersten angeregten Zustand sind $F'= 0,\, 1,\, 2,\, 3$ möglich. Das Termschema ist in Abbildung \ref{rb} zu sehen.
+   Der Kühlübergang ist $\ket{F=2}\rightarrow\ket{F'=3}$. Es ist allerdings auch möglich, dass ein Atom von $\ket{F=2}$ nach $\ket{F'=2}$ angeregt wird. Von dort aus können die Atome in $\ket{F=2}$ (das stellt kein Problem dar) oder $\ket{F=1}$ fallen. Letztere kann der Kühllaser nicht mehr abbremsen. Daher gibt es noch einen Rückpumplaser um bei diesen Atomen wieder den Übergang $\ket{F=1}\rightarrow\ket{F'=2}$ anzuregen. Wenn sie von dort in den Zustand $\ket{F=2}$ fallen, können die Atome weiter gekühlt werden.
+   \\Man benötigt also zwei Laser (Kühl- und Rückpumplaser), die leicht unterschiedliche Frequenzen haben. Der Frequenzabstand $\Delta$ ist dabei (Werte aus Abbildung \ref{rb}):
+   \begin{align*}
+     \omega_K & \approx - \SI{2,563}{\GHz} + \SI{384,230484}{\THz} + \SI{194}{\MHz} \\
+     \omega_R & \approx \SI{4,272}{\GHz} + \SI{384,230484}{\THz} - \SI{73}{\MHz} \\
+     \Delta & = \omega_R - \omega_K \\
+     & \approx \SI{4,272}{\GHz} - \SI{73}{\MHz} + \SI{2,563}{\GHz} - \SI{194}{\MHz} \\
+     & = \SI{6,568}{\GHz}
+   \end{align*}
+\newpage
+  \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.6\textwidth]{Rb.png}
-  \caption{Termschema von ${}^{87}$Rb}
-  \label{fvonv}
+  \includegraphics[page=10, width=\textwidth, trim=27mm 56mm 33mm 52mm, clip]{MOTDurchfuehrung.pdf}
+  \caption{Termschema von ${}^{87}$Rb (Kopie aus der Versuchsdurchführung)}
+  \label{rb}
   \end{figure}
-\\Für eine MOT mit Rb-Atomen benötigt man zwei Laser, die leicht unterschiedlichen Frequenzen (Frequenzabstand ${\Delta}$ = 2.5 GHz) haben. Die sättigungsspektroskopisch werden stabilisiert, um die Laser in richtigen Frequenz zu betreiben.
+\newpage
 \section{Bestandteile der MOT}
   \subsection{Die Laser}
     In dem Versuchsaufbau werden zwei Halbleiterlaser (Kühl- und Rückpumplaser)
@@ -107,7 +111,7 @@ ${}^{87}$Rb ist ein Alkalimetall mit einem Elektron in der äußersten, der vier
     Gitter wird also bewegt. Die Reflexion in die nullte Ordnung wird als Laserlicht
     verwendet. Um Rückreflexe in die Diode zu verhindern steht hinter den Lasern
     jeweils ein Isolator.
-  \subsection{Laserlocken}
+  \subsection{Die Sättigungsspektroskopie}
     Um die Laser zu koppeln wird ein kleiner Teil des Lichts in den
     Spektroskopiepfad ausgekoppelt. Dort befindet sich ein Aufbau zur
     Sättigungsspektroskopie. Dabei wird der Strahl durch eine Glasscheibe geschickt
@@ -143,11 +147,53 @@ ${}^{87}$Rb ist ein Alkalimetall mit einem Elektron in der äußersten, der vier
     Modulierung des Stromes mit einer Sinuskurve. Dies erlaubt Messungen auf beiden
     Seiten leicht neben dem betrachteten Punkt und somit eine Abschätzung der Steigung
     also eine Ableitung. Das Locken erfolgt dann auf einem Nulldurchgang der Ableitung.
-  \subsection{Der AOM}
+  \subsection{Der Akusto-optische Modulator}
+    Das Locken des Kühllasers erfolgt auf die Cross-Over-Resonanz der Übergänge
     
-  \subsection{Der TA}
+    ...............................(MHz)
+    
+    Der Übergang, den der Kühllaser jedoch anregen soll ist
+    $\ket{F=2}\rightarrow\ket{F'=3}$ (
+    
+    .........................\SI{}{\MHz}......................
+    
+    ). Um die Differenz auszugleichen wird ein akusto-optischer Modulator (AOM)
+    verwendet. Im AOM ist eine Bragg-Zelle, in der eine Schallwelle erzeugt wird. Durch
+    diese Schallwelle ändert sich der Brechungsindex in der Zell periodisch. Daher
+    wirkt die Bragg-Zelle wie ein Gitter, es werden also mehrere Beugungsordnungen mit
+    je nach Ordnung geänderten Wellenlängen reflektiert. Hier wird die erste Ordnung
+    durch eine Blende isoliert. Dieser Strahl hat eine höhere Frequenz, als der
+    Einlaufende. Wie groß die Frequenzänderung ist hängt von der Spannung am AOM ab und
+    kann einer Eichkurve in der Anleitung entnommen werden. Danach wird die erste
+    Ordnung in den AOM zurückreflektiert (AOM-Doppelpass). Dies bewirkt eine erneute
+    Frequenzerhöhung, man muss also die doppelte AOM-Frequenz addieren um die Frequenz
+    des Strahls nach dem Doppelpass zu erhalten. Mit der Eichkurve ergibt sich eine
+    optimale Spannung am AOM von
+    
+    ................................
+  \subsection{Der Trapezverstärker}
+    Nachdem die Strahlen des Kühl- und des Rückpumplasers überlagert werden durchlaufen
+    sie um die Leistung zu erhöhen einen Trapezverstärker (engl. tapered amplifier
+    (TA)). Ein TA besteht im wesentlichen aus einem aktiven Medium (hier eine
+    p-n-Diode), wie bei einem Laser. Auch bei einem TA wird durch Pumpen (hier durch
+    Ströme von ca. \SI{1}{\A}) eine Besetzungsinversion erzeugt. Allerdings fehlt ein
+    optischer Resonator um von spontaner zu stimulierter Emission überzugehen.
+    Stattdessen wird ein Laserstrahl (Seed) eingekoppelt, der Übergänge anregt. Als
+    Resultat erhält man einen Strahl mit wesentlich höherer Leitung (siehe Abschnitt
+    
+    \ref{intensities}
+    %\label{intensities} bei Intensitätsmessungen im Strahlengang hinzufügen
+    
+    ). Um im Trapezverstärker genügend stimulierte Emission anzuregen
+    muss der Laserstrahl den TA möglichst genau durchlaufen. Dies erreicht man durch
+    ein Spiegelpaar vor dem TA, mit dem man Strahlrichtung und -lage anpassen kann. Das
+    justieren erfolgt bei niedrigen Strömen, da das Betreiben eines Trapezverstärkers
+    ohne Seed der Diode schadet. Wie bei den Lasern steht auch hinter dem TA ein
+    Isolator um Rückreflexe zu vermeiden. Danach wird der Strahl durch eine Glasfaser
+    zum Aufbau der eigentlichen MOT geleitet.
   \subsection{Die Vakuumkammer}
   \subsection{Die Kamera}
+\newpage
 \section{Messungen}
   \subsection{Intensitätsmessungen im Strahlengang}
   Am Anfang des Versuchs haben wir geprüft, ob alle optischen Komponenten richtig justiert sind. Dazu haben wir mit dem Leistungsmesskopf (Laserdiode) die Lichtleistungen an der geforderten Stellen (wie man in Abbildung \ref{leistung} genau sehen kann) gemessen. Dabei waren  Rückpumper bzw. Kühllaser mit $16.4 mA$ bzw. $86.1 mA$ im Betrieb.
@@ -169,30 +215,32 @@ Und wir haben auch Strahlleistung vor dem Faser für zugehörige Ströme in TA g
 600&12.5\\ \hline
 700&25.5\\ \hline
 800&49\\ \hline
-900& >>1\\ \hline
+900& Skaler Ende\\ \hline
 \end{tabular}
-\caption 
-\end{center}
-
-    \begin{figure}[h!]
+\caption{Leistung für verschiedene Ströme am TA}
+\end{figure}
+ \begin{figure}[h!]
   \centering
   \includegraphics[width=0.7\textwidth]{TA.png}
   \caption{Zugehörige Diagramm}
   \label{TA}
   \end{figure}
   \subsection{Vermessung der Strahlbreite}
-  Zum Berechnung der Teilchenzahlen in der MOT ist nötig die Intensität des Laserstrahls zu kennen. Die Messgeräte, was im Versuch zur Verfügung standen, kann man aber nur die Leistung bestimmen.\\
-  Also es wird mit der''Knife-edge‘‘-Methode und Hilfe einer Linse den Strahlendurchmesser bestimmt. Dazu mästen wir für verschiedene Positionen der Mikrometerschraube in horizontaler und vertikaler Richtung, um waist $\omega_h$ und $\omega_v$ auszurechnen, folgt:\\
-  
-  
-  $\omega_h =2.828233463(x_{70\%}-x_{30\%})=2.828233463(6.43-4.21) \mu m=6.278678288  \mu m$ 
-  
-   $\omega_v =2.828233463(x_{70\%}-x_{30\%})=2.828233463(2.63-4.67) \mu m=5.769596265  \mu m$\\ \\
-   Damit können wir jetzt Strahlfläche $F$ ausrechnen:\\
-   
-   $F=\pi \omega_h \omega_v =113.806 \mu m^2$\\ \\
-   Und jetzt können wir Intensität $I$ ausrechnen, wobei die Leistung vom Strahl ohne Klinge ist $10^4 \mu W$:\\
-   
-   $I=\frac{P}{F}=\frac{10^{-2} W}{113.806 .10^{-12} m^2}=11380.6 W.m^{-2}$
+ Um die Anzahl von Teilchen in der MOT zu berechnen, ist es wichtig die Intensität des Laserstrahls zu kennen. Da wir die Leistung vom Strahl messen konnten, war es erforderlich, den Strahldurchmesser zu bestimmen.\\
+ Dazu haben wir eine Klinge, die mit einer Mikrometerschraube bewegbar war, in horizontaler und vertikaler Richtung so in den Strahl geschoben, dass man jeweils 70 und 30 Prozent der Leistung vom Strahl messen konnte. Daher haben wir die unteren $x$ Werte (die Stellung der Schraube). Diese Werte kann man in die folgende Formel einsetzen, um den waist (engl. für Strahlbreite) $\omega_h$ und $\omega_v$ auszurechnen:\\
+  \begin{align*}
+  \omega_h & \approx 2.828(x_{70\%}-x_{30\%})\\
+  &=2.828(6.43-4.21) \si{\micro\m}\\
+  &=\SI{6.278}{\micro\m}\\
+  \omega_v &\approx 2.828(x_{70\%}-x_{30\%})\\&=2.828(2.63-4.67) \si{\micro\m}\\&=5.769  \si{\micro\m}
+   \end{align*}
+   Damit können wir jetzt Strahlfläche $F$ ausrechnen:
+   \begin{align*}
+   F=\pi \omega_h \omega_v =\SI{113.806}{\micro\m^2}
+   \end{align*}
+   Und jetzt können wir Intensität $I$ ausrechnen, wobei die Leistung vom Strahl ohne Klinge \SI{10} {\micro\W}:\\
+   \begin{align*}
+   I=\frac{P}{F}=\frac{\SI{e-2}{\W}}{\SI{113.806e-12}{\m^2}}=\SI{87.7}{\mega\W\per\square\m}
+   \end{align*}
   \subsection{Eichung der Kamera}
 \end{document}
