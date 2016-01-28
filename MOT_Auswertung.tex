@@ -191,7 +191,14 @@
     Isolator um Rückreflexe zu vermeiden. Danach wird der Strahl durch eine Glasfaser
     zum Aufbau der eigentlichen MOT geleitet.
   \subsection{Die Vakuumkammer}
-    
+    Die Vakuumapparatur war im Versuch bereits aufgebaut und in Betrieb, man musste nur
+    jeweils zum erzeugen einer MOT Rubidium in die Kammer bringen. Dies geschah mittels
+    Dispensern, die durch Ströme von ca. \SI{3}{\A} zum Glühen gebracht wurden und
+    dadurch Rubidium-Dampf abgaben. Dabei musste man darauf achten, dass die Dispenser
+    nicht zu lange am Stück liefen und der Druck in der Vakuumkammer nicht zu groß
+    wurde, da die Dispenser sonst schnell leer werden könnten und ersetzt werden
+    müssten. Daher mussten die Zeit und der Strom an den Dispensern, sowie der Druck in
+    der Kammer in ein Laborbuch eingetragen werden.
   \subsection{Die Kamera}
     Es stehen im Versuch zwei Kameras zur Verfügung. Eine Fingerkamera für qualitative
     Beobachtungen (da sie eine automatische Helligkeitsregelung hat) und eine
@@ -199,7 +206,58 @@
     werden (siehe Abschnitt \ref{eichung}). Mit der CCD-Kamera sollte die Atomzahl in
     der MOT bestimmt werden, aus der Eichung konnte die Photonenanzahl pro Pixel
     berechnet werden. Daher ist es noch notwendig die Anzahl von Photonen, die ein Atom
-    emittiert zu bestimmen. 
+    emittiert zu bestimmen. Der Teil des Lichts, der von der Kamera aufgenommen wird
+    ist (mit Abstand $a = \SI{28}{\cm}$ zum Objektiv und Objektivdurchmesser $d =
+    \SI{4.5}{\cm}$):
+    \begin{align*}
+      \alpha = \frac{4 \pi (d / 2)^2}{\pi a^2} = \SI{2.58}{\percent}
+    \end{align*}
+    Ein Anteil $\beta$ von ca. \SI{4}{\percent} geht durch Reflexionen verloren. Die
+    gesamte von der Atomwolke emittierte Leistung $P_{ges}$ ergibt sich also bei einer
+    von der Kamera gemessenen Leistung von $P_{gem}$ aus:
+    \begin{align*}
+      P_{ges} = \frac{P_{gem}}{\alpha (1 - \beta)} = 40.33 P_{gem}
+    \end{align*}
+    Die gemessene Leistung ist gegeben durch
+    \begin{align*}
+      P_{gem} &= \frac{n \hbar \omega}{t} \\
+      &= \frac{\hbar \omega}{t} \frac{\text{Counts}}{\text{Atom}} \text{Counts}
+    \end{align*}
+    mit der Anzahl $n$ von Photonen, die die Kamera registriert, Licht der Energie
+    $\hbar \omega$, der Belichtungszeit $t = \SI{19.932}{\ms}$ der Kamera und dem
+    Umrechnungsfaktor $\frac{\text{Counts}}{\text{Atom}}$ aus Abschnitt \ref{eichung}.
+    Die Leistung $P_A$, die ein Atom abstrahlt ist (mit der Streurate $1 / \tau_z$):
+    \begin{align*}
+      P_A = \frac{\hbar \omega}{\tau_z}
+    \end{align*}
+    Die Anzahl $N$ der Atome in der Falle ist das Verhältnis der abgestrahlten Leistung
+    aller Atome zur Leistung des Lichts eines Atoms:
+    \begin{align*}
+      N &= \frac{P_{ges}}{P_A} \\
+      &= \frac{1}{\alpha (1 - \beta)} \frac{\tau_z}{t}
+        \frac{\text{Counts}}{\text{Atom}} \text{Counts}
+    \end{align*}
+    Die Streurate ist:
+    \begin{align*}
+      \tau_z = \left(
+        \frac{\Gamma}{2}
+        \frac{I_{ges} / I_0}{1 + I_{ges} / I_0 + (2 \delta / \Gamma)^2}
+      \right)^{-1}
+    \end{align*}
+    Dabei ist die Sättigungsintensität $I_0 = \SI{16}{\W\per\square\m}$, die
+    Linienbreite $\Gamma = 2 \pi \cdot \SI{6}{\MHz}$ und die Intensität des Laserlichts
+    $I_{ges} = \SI{87.7}{\mega\W\per\square\m}$. Die Frequenzverschiebung $\delta$ ist
+    (bei einer Spannung von \SI{20}{\V} am AOM):
+    \begin{align*}
+      \delta = (\omega_{co} + 2 \omega_{AOM}) - \omega_K = \SI{55.78}{\MHz}
+    \end{align*}
+    Mit diesen Werten ergibt sich $\tau_z = \SI{53}{\nano\s}$. Mit
+    $\frac{\text{Counts}}{\text{Atom}} = 242 \cdot 10^3$ erhält man:
+    \begin{align*}
+      N = 26 \text{Counts}
+    \end{align*}
+    Mit diesem Umrechnungsfaktor, sowie dem Abbildungsmaßstab ist es möglich Atomzahl
+    und Größe einer Atomwolke in der MOT zu bestimmen.
 \newpage
 \section{Messungen}
   \subsection{Intensitätsmessungen im Strahlengang}
@@ -250,4 +308,5 @@
    I=\frac{P}{F}=\frac{\SI{e-2}{\W}}{\SI{113.806e-12}{\m^2}}=\SI{87.7}{\mega\W\per\square\m}
    \end{align*}
   \subsection{Eichung der Kamera}
+  \label{eichung}
 \end{document}
