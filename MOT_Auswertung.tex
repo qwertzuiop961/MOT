@@ -245,9 +245,9 @@ Und wir haben auch Strahlleistung vor dem Faser für zugehörige Ströme in TA g
    \end{align*}
   \subsection{Eichung der Kamera}
   Wir haben erstmal mit Millimeterpapier gemessen, wieviele Pixel der Kamera einem Quadratmeter entsprechen, dabei Millimeterpapier in gleichen abstand wie Mot gebracht und dann mit Kameraprogramm ein Foto gemacht und ein Kästchen davon ausgewählt, dann mit Mathematicaprogramm weiter rechnen lassen, kommen diese Werte raus, Pixel in x-Richtung: $256$ in y-Richtung: $258$, umgerechnet den Mittelwert der beiden Zahlen$(257)$ in \si{\micro\m/Pixel} ist $38.9105$.\\
-  Demnächst haben wir zwei Fotos einmal Ohne Laserstrahl (nur Hintergrund) und einmal mit Laserstrahl auf Kamera zu richten(dazu Linse gebracht, um den Strahl divergiert auf Kamera zu kriegen), gemacht. Dann mit der Hilfe der Mathematicaprogramm wie auch der Code dazu in Durchleitung stand, haben wir die beiden Fotos in Listenelement aufsummiert und die Werte dazu(bzw. Pixels) mit und ohne Lichts voneinander abgezogen, dadurch kann man weiter den Eichfaktor Photonen Pro Pixel ausrechnen, Dabei kennen wir die Wellenlänge, die Leistung des Lichts, die Abschwächung der Filter($od$) und die Belichtugszeit der Kamera, damit können wir $n$, Anzahl der Photonen bestimmen, also:\\
+  Demnächst haben wir zwei Fotos einmal Ohne Laserstrahl (nur Hintergrund) und einmal mit Laserstrahl auf Kamera zu richten (dazu Linse gebracht, um den Strahl divergiert auf Kamera zu kriegen), gemacht. Dann mit der Hilfe der Mathematicaprogramm wie auch der Code dazu in Durchleitung stand, haben wir die beiden Fotos in Listenelement aufsummiert und die Werte dazu (bzw. Pixels) mit und ohne Lichts voneinander abgezogen, dadurch kann man weiter den Eichfaktor Photonen Pro Pixel ausrechnen, Dabei kennen wir die Wellenlänge, die Leistung des Lichts, die Abschwächung der Filter($od$) und die Belichtugszeit der Kamera, damit können wir $n$, Anzahl der Photonen bestimmen, also:\\
   \begin{align*}
-  \lambda &=\SI{780.246}{\nano\m} ; t=\SI{19.932}{\milli\m} ; od=3 ; P=\SI{1.404}{\milli\W} \\
-  n&=\frac{P \lambda t}{h c} e^{-od} ; Photonen Pro Pixel=\frac{n}{Pixel}=242423
+  \lambda &=\SI{780.246}{\nano\m} ; t=\SI{19.932}{\milli\m} ; od=3 ; P=\SI{1.404}{\milli\W} , E=\frac{h c}{\lambda} \\
+  n&=\frac{P \lambda t}{h c} 10^{-od} ; Photonen Pro Pixel=\frac{n}{Pixel}=4869.2
   \end{align*}
 \end{document}
