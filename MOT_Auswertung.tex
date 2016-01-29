@@ -222,11 +222,12 @@
     Die gemessene Leistung ist gegeben durch
     \begin{align*}
       P_{gem} &= \frac{n \hbar \omega}{t} \\
-      &= \frac{\hbar \omega}{t} \frac{\text{Counts}}{\text{Atom}} \text{Counts}
+      &= \frac{\hbar \omega}{t} \frac{\text{Photonen}}{\text{Count}} \text{Counts}
     \end{align*}
     mit der Anzahl $n$ von Photonen, die die Kamera registriert, Licht der Energie
     $\hbar \omega$, der Belichtungszeit $t = \SI{19.932}{\ms}$ der Kamera und dem
-    Umrechnungsfaktor $\frac{\text{Counts}}{\text{Atom}}$ aus Abschnitt \ref{eichung}.
+    Umrechnungsfaktor $\frac{\text{Photonen}}{\text{Count}}$ aus Abschnitt
+    \ref{eichung}.
     Die Leistung $P_A$, die ein Atom abstrahlt ist (mit der Streurate $1 / \tau_z$):
     \begin{align*}
       P_A = \frac{\hbar \omega}{\tau_z}
@@ -236,7 +237,7 @@
     \begin{align*}
       N &= \frac{P_{ges}}{P_A} \\
       &= \frac{1}{\alpha (1 - \beta)} \frac{\tau_z}{t}
-        \frac{\text{Counts}}{\text{Atom}} \text{Counts}
+        \frac{\text{Photonen}}{\text{Count}} \text{Counts}
     \end{align*}
     Die Streurate ist:
     \begin{align*}
@@ -253,9 +254,9 @@
       \delta = (\omega_{co} + 2 \omega_{AOM}) - \omega_K = \SI{55.78}{\MHz}
     \end{align*}
     Mit diesen Werten ergibt sich $\tau_z = \SI{53}{\nano\s}$. Mit
-    $\frac{\text{Counts}}{\text{Atom}} = 242 \cdot 10^3$ erhält man:
+    $\frac{\text{Photonen}}{\text{Count}} = 4869.2$ erhält man:
     \begin{align*}
-      N = 26 \text{Counts}
+      N = 0.5 \text{Counts}
     \end{align*}
     Mit diesem Umrechnungsfaktor, sowie dem Abbildungsmaßstab ist es möglich Atomzahl
     und Größe einer Atomwolke in der MOT zu bestimmen.
@@ -310,10 +311,11 @@
    \end{align*}
   \subsection{Eichung der Kamera}
   \label{eichung}
-  Wir haben erstmal mit Millimeterpapier gemessen, wieviele Pixel der Kamera einem Quadratmeter entsprechen, dabei Millimeterpapier in gleichen abstand wie Mot gebracht und dann mit Kameraprogramm ein Foto gemacht und ein Kästchen davon ausgewählt, dann mit Mathematicaprogramm weiter rechnen lassen, kommen diese Werte raus, Pixel in x-Richtung: $256$ in y-Richtung: $258$, umgerechnet den Mittelwert der beiden Zahlen$(257)$ in \si{\micro\m/Pixel} ist $38.9105$.\\
-  Demnächst haben wir zwei Fotos einmal Ohne Laserstrahl (nur Hintergrund) und einmal mit Laserstrahl auf Kamera zu richten (dazu Linse gebracht, um den Strahl divergiert auf Kamera zu kriegen), gemacht. Dann mit der Hilfe der Mathematicaprogramm wie auch der Code dazu in Durchleitung stand, haben wir die beiden Fotos in Listenelement aufsummiert und die Werte dazu (bzw. Pixels) mit und ohne Lichts voneinander abgezogen, dadurch kann man weiter den Eichfaktor Photonen Pro Pixel ausrechnen, Dabei kennen wir die Wellenlänge, die Leistung des Lichts, die Abschwächung der Filter($od$) und die Belichtugszeit der Kamera, damit können wir $n$, Anzahl der Photonen bestimmen, also:\\
+  Wir haben erstmal mit Millimeterpapier gemessen, wieviele Pixel der Kamera einem Quadratmeter entsprechen. Dabei haben wir Millimeterpapier im gleichen Abstand wie zur MOT angebracht und dann mit dem Kameraprogramm ein Foto gemacht. Wir haben ein Kästchen von \SI{1}{\cm^2} davon ausgewählt und mit Mathematica (wie in der Durchführung erklärt) die Anzahl der Pixel bestimmt. Pixel in x-Richtung: $256$. Pixel in y-Richtung: $258$. Mit dem Mittelwert der beiden Zahlen ($257$) haben wir den Skalierungsfaktor \SI{38.9105}{\micro\m\per Pixel} berechnet.\\
+  Danach haben wir zwei Fotos gemacht, einmal ohne Laserstrahl (nur Hintergrund) und einmal mit dem Laserstrahl direkt auf die Kamera gerichtet. Dazu haben wir einen Filter benutzt um das Licht abzuschwächen und eine Linse damit der Strahl nicht fokussiert ist. Sonst hätte es Bereiche gegeben, in denen die Kamera sättigt. Die Anzahl der Counts wurde vom Kameraprogramm angezeigt. Dadurch kann man weiter den Eichfaktor Photonen Pro Count ausrechnen. Die Leistung des eingestrahlten Lichts ist das Produkt aus der Energie der Photonen ($n\hbar\omega$ bei $n$ Photonen) und der Belichtungszeit $t=\SI{19.932}{\mm}$. Andererseits haben wir die Leistung vor dem Filter (optische Dichte 3) gemessen. Also ist:
   \begin{align*}
-  \lambda &=\SI{780.246}{\nano\m} ; t=\SI{19.932}{\milli\m} ; od=3 ; P=\SI{1.404}{\milli\W} , E=\frac{h c}{\lambda} \\
-  n&=\frac{P \lambda t}{h c} 10^{-od} ; Photonen Pro Pixel=\frac{n}{Pixel}=4869.2
+  \lambda &=\SI{780.246}{\nano\m},\, t=\SI{19.932}{\milli\m},\, \text{OD}=3,\, P=\SI{1.404}{\milli\W},\, E=\frac{h c}{\lambda} \\
+  n \frac{h c}{\lambda}&=P 10^{-\text{OD}} \\
+  \Rightarrow \frac{\text{Photonen}}{\text{Counts}} &=4869.2
   \end{align*}
 \end{document}
